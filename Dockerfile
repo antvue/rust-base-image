@@ -43,11 +43,12 @@ RUN echo \
     \
     rm "/root/.wget-hsts" && \
     update-ca-certificates && \
-    apk add ca-certificates && \
+    apk add ca-certificates tzdata && \
     rm -rf \
         "$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_BIN_PACKAGE_FILENAME" \
         "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME" \
-        /var/cache
+        /var/cache && \
+    mkdir /var/cache/apk/ -p
 
 
