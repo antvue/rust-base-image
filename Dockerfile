@@ -7,7 +7,7 @@ ENV LANG="C.UTF-8" \
     LC_ALL="en_US.UTF-8" \
     RUST_LOG="info" \
     ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" \
-    ALPINE_GLIBC_PACKAGE_VERSION="2.31-r0" 
+    ALPINE_GLIBC_PACKAGE_VERSION="2.32-r0" 
 
 ENV ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk" \
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" \
