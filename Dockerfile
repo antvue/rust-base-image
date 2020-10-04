@@ -13,7 +13,8 @@ ENV ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk"
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" \
     ALPINE_GLIBC_I18N_PACKAGE_FILENAME="glibc-i18n-$ALPINE_GLIBC_PACKAGE_VERSION.apk" 
 
-ENV TZ=Asia/Shanghai
+ENV TZ="Asia/Shanghai" \
+    TZDIR="/usr/share/zoneinfo/"
 
 ADD fs/ /
 
@@ -40,8 +41,6 @@ RUN echo \
     rm "/etc/apk/keys/sgerrand.rsa.pub" && \
     /usr/glibc-compat/bin/localedef --force --inputfile POSIX --charmap UTF-8 "$LANG" || true && \
     echo "export LANG=$LANG" > /etc/profile.d/locale.sh && \
-    \
-    apk del glibc-i18n && \
     \
     rm "/root/.wget-hsts" && \
     update-ca-certificates && \
